@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AndroiLogictic"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotpassSreen"
+            android:exported="false" />
+        <activity
             android:name=".RegisterSreen"
             android:exported="false" />
         <activity

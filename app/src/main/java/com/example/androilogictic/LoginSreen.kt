@@ -18,11 +18,16 @@ class LoginSreen : AppCompatActivity() {
         val pass = findViewById<TextInputEditText>(R.id.passwordLogin)
 
         val register = findViewById<Button>(R.id.registerButton)
+        val forgotPass = findViewById<Button>(R.id.forgotPassButton)
         val login = findViewById<Button>(R.id.Login)
 //
 //        //Listerner
         register.setOnClickListener {
             val intent = Intent(this, RegisterSreen::class.java)
+            startActivity(intent)
+        }
+        forgotPass.setOnClickListener {
+            val intent = Intent(this, ForgotpassSreen::class.java)
             startActivity(intent)
         }
 
