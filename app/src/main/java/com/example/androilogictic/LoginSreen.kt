@@ -32,7 +32,7 @@ class LoginSreen : AppCompatActivity() {
         }
 
         login.setOnClickListener {
-            val intent = Intent (this, MainSreen::class.java)
+            val intent = Intent (this, MainUserSreen::class.java)
             val dialog = AlertDialog.Builder(this)
             dialog.apply {
                 setTitle("Ngooo")
