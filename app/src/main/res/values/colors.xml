@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorButton">#D3D3D3</color>
     <color name="colorLogin">#FFFAF0</color>
+    <color name="blue">#82C4C3</color>
+    <color name="blue2">#408ce2</color>
+    <color name="grey">#f1eafc</color>
 </resources>
