@@ -18,7 +18,6 @@ class LoginSreen : AppCompatActivity() {
         val pass = findViewById<TextInputEditText>(R.id.passwordLogin)
 
         val register = findViewById<Button>(R.id.registerButton)
-        val forgotPass = findViewById<Button>(R.id.forgotPassButton)
         val login = findViewById<Button>(R.id.Login)
 //
 //        //Listerner
@@ -26,13 +25,9 @@ class LoginSreen : AppCompatActivity() {
             val intent = Intent(this, RegisterSreen::class.java)
             startActivity(intent)
         }
-        forgotPass.setOnClickListener {
-            val intent = Intent(this, ForgotpassSreen::class.java)
-            startActivity(intent)
-        }
 
         login.setOnClickListener {
-            val intent = Intent (this, MainUserSreen::class.java)
+            val intent = Intent (this, MainSreen::class.java)
             val dialog = AlertDialog.Builder(this)
             dialog.apply {
                 setTitle("Ngooo")

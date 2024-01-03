@@ -12,7 +12,7 @@
         android:id="@+id/logoLogin"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/truck"
+        android:src="@drawable/logo"
         android:transitionName="logo"
         ></ImageView>
 

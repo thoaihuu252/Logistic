@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data/>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumnkodetransakasi"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_1">
+        <LinearLayout android:id="@+id/linearRowkodetransakasi"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_16pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtKodeTransakasi"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_marginTop="@dimen/_3pxv"
+                android:layout_weight="0.72" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@string/msg_kode_transakasi"
+                style="@style/txtMulishsemibold12" tools:text="@string/msg_kode_transakasi"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnBerhasil"
+                android:layout_height="@dimen/_23pxv"
+                android:layout_marginStart="@dimen/_94pxh"
+                android:layout_width="@dimen/_61pxh"
+                android:paddingBottom="@dimen/_3pxv"
+                android:paddingEnd="@dimen/_8pxh"
+                android:paddingStart="@dimen/_8pxh"
+                android:paddingTop="@dimen/_3pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_berhasil"
+                android:textAllCaps="false"
+                style="@style/btnSolidRounded" tools:text="@string/lbl_berhasil"/>
+        </LinearLayout>
+        <View android:background="@color/gray_400"
+            android:id="@+id/lineVectorEleven"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_1pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_16pxv" android:layout_width="@dimen/_313pxh"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearRowvector"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_19pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_15pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <ImageButton
+                android:background="@drawable/rectangle_bg_cyan_50_radius_10"
+                android:id="@+id/btnVector"
+                android:layout_height="@dimen/_44pxh"
+                android:layout_width="@dimen/_44pxh"
+                android:paddingHorizontal="@dimen/_12pxh"
+                android:paddingVertical="@dimen/_12pxv"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_vector_yellow_700" tools:ignore="ContentDescription"/>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearColumntambahsaldo"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2pxv"
+                android:layout_marginStart="@dimen/_8pxh"
+                android:layout_weight="0.72" android:layout_width="0dp" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTambahSaldo"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@string/lbl_tambah_saldo"
+                    style="@style/txtMulishbold16" tools:text="@string/lbl_tambah_saldo"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPrice"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_3pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/lbl_5"
+                    style="@style/txtMulishsemibold14" tools:text="@string/lbl_5"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="end"
+                android:id="@+id/linearColumnnovcounter"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5pxv"
+                android:layout_marginStart="@dimen/_8pxh"
+                android:layout_marginTop="@dimen/_3pxv"
+                android:layout_weight="0.13" android:layout_width="0dp" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:gravity="start"
+                    android:id="@+id/txtNovCounter"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@string/lbl_29_nov"
+                    style="@style/txtMulishsemibold12" tools:text="@string/lbl_29_nov"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txt1230"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8pxh"
+                    android:layout_marginTop="@dimen/_3pxv"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@string/lbl_12_30"
+                    style="@style/txtMulishsemibold12" tools:text="@string/lbl_12_30"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
