@@ -5,18 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Splash"
-    android:background="@color/blue">
+    android:background="#000000">
 
 
     <ImageView
         android:id="@+id/imageLogo"
         android:layout_width="wrap_content"
-        android:transitionName="logo"
         android:layout_height="1400px"
-        android:src="@drawable/truck"
+        android:src="@drawable/logo"
+        android:transitionName="logo"
         android:visibility="visible"
-        tools:visibility="visible"
-        tools:ignore="MissingConstraints"></ImageView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="80dp"
+        tools:visibility="visible"></ImageView>
 
     <TextView
         android:id="@+id/textName"
