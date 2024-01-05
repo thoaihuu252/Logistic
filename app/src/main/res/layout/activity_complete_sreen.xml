@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CompleteSreen">
+    tools:context=".Sreen.CompleteSreen">
     <LinearLayout android:gravity="start"
         android:id="@+id/linearColumnarrowleft"
         android:layout_height="match_parent"
@@ -33,7 +33,7 @@
                 <LinearLayout android:id="@+id/linearRowjordanflighte"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_3pxh"
-                    android:layout_marginStart="@dimen/_113pxh"
+                    android:layout_marginStart="@dimen/_80pxh"
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.97"
                     android:layout_width="0dp" android:orientation="horizontal">
@@ -43,8 +43,8 @@
                         android:layout_weight="0.71"
                         android:layout_width="0dp"
                         android:singleLine="true"
-                        android:text="@string/lbl_best_sellers"
-                        style="@style/txtHelveticaNowTextmedium16" tools:text="@string/lbl_best_sellers"/>
+                        android:text="Đơn hàng hoàn thành"
+                        style="@style/txtHelveticaNowTextmedium16" />
                     <ImageView android:id="@+id/image24FadersHorizo"
                         android:layout_height="@dimen/_13pxh"
                         android:layout_marginBottom="@dimen/_5pxv"
@@ -104,8 +104,7 @@
                         android:layout_weight="0.18"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="@string/lbl_shoes"
-                        tools:text="@string/lbl_shoes" />
+                        android:text="TExt" />
 
                     <TextView android:ellipsize="end"
                         android:id="@+id/txtMenOne"
@@ -116,8 +115,8 @@
                         android:layout_weight="0.43"
                         android:layout_width="0dp"
                         android:singleLine="true"
-                        android:text="@string/lbl_tops_t_shirts"
-                        style="@style/txtHelveticaNowTextregular16" tools:text="@string/lbl_tops_t_shirts"/>
+                        android:text="Text"
+                        style="@style/txtHelveticaNowTextregular16" />
                     <TextView android:ellipsize="end"
                         android:id="@+id/txtMenTwo"
                         android:layout_height="wrap_content"
@@ -142,8 +141,7 @@
                 android:layout_marginEnd="@dimen/_10pxh"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="5"
-                tools:listitem="@layout/row_complete" />
+                tools:itemCount="5" />
         </LinearLayout>
         <FrameLayout android:gravity="bottom|start"
             android:id="@+id/frameBottombar"

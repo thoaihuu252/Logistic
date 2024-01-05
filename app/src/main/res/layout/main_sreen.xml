@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainSreen">
+    tools:context=".Sreen.MainSreen">
 
     <LinearLayout
         android:id="@+id/frameHome"
@@ -59,8 +59,7 @@
                             android:layout_marginEnd="@dimen/_10pxh"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="@string/lbl_discover"
-                            tools:text="@string/lbl_discover" />
+                            android:text="Hello bro" />
 
                         <TextView
                             android:id="@+id/txtDuration"
@@ -76,13 +75,11 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/imageEllipseOne"
-                        android:layout_width="@dimen/_108pxh"
-                        android:layout_height="@dimen/_109pxh"
-                        android:layout_marginTop="@dimen/_12pxv"
+                        android:layout_width="@dimen/_109sp"
+                        android:layout_height="@dimen/_109sp"
+                        android:layout_marginTop="@dimen/_12sp"
                         android:scaleType="fitXY"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/img_ellipse1" />
+                        android:src="@drawable/img_ellipse1"></ImageView>
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
 
@@ -97,8 +94,7 @@
                 android:layout_marginEnd="@dimen/_21pxh"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="@string/lbl_john_smith"
-                tools:text="@string/lbl_john_smith" />
+                android:text="Thoaidz"/>
 
             <FrameLayout
                 android:id="@+id/frameStackmaskgroup"
@@ -144,8 +140,7 @@
                             android:layout_marginEnd="@dimen/_10pxh"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="@string/msg_total_portofoli"
-                            tools:text="@string/msg_total_portofoli" />
+                            android:text="Tổng tiền" />
 
                         <TextView
                             android:id="@+id/txtPrice"
@@ -212,8 +207,7 @@
                 android:textSize="18sp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="@string/lbl_upcoming"
-                tools:text="@string/lbl_upcoming" />
+                android:text="Công việc" />
 
             <LinearLayout
                 android:id="@+id/linearCard"
@@ -231,17 +225,14 @@
                     android:layout_height="@dimen/_75pxv">
 
                     <ImageView
-                        android:id="@+id/imageImageTwo"
-                        android:layout_width="@dimen/_58pxh"
-                        android:layout_height="@dimen/_62pxh"
+                        android:layout_width="@dimen/_58sp"
+                        android:layout_height="@dimen/_58sp"
                         android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/_11pxh"
-                        android:layout_marginTop="@dimen/_6pxv"
-                        android:layout_marginEnd="@dimen/_10pxh"
-                        android:layout_marginBottom="@dimen/_7pxv"
+                        android:layout_marginStart="@dimen/_11sp"
+                        android:layout_marginTop="@dimen/_2pxv"
+                        android:layout_marginEnd="@dimen/_11sp"
                         android:scaleType="fitXY"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/img_image" />
+                        android:src="@drawable/img_image"></ImageView>
                 </FrameLayout>
 
                 <LinearLayout
@@ -264,8 +255,7 @@
                         android:ellipsize="end"
                         android:singleLine="true"
                         android:textSize="12sp"
-                        android:text="@string/lbl_basic_pedicure"
-                        tools:text="@string/lbl_basic_pedicure" />
+                        android:text="Đơn hàng của bạn" />
 
                     <LinearLayout
                         android:id="@+id/linearRowwithpaty"
@@ -286,8 +276,7 @@
                             android:ellipsize="end"
                             android:singleLine="true"
                             android:textSize="12sp"
-                            android:text="@string/lbl_with_paty"
-                            tools:text="@string/lbl_with_paty" />
+                            android:text="Hiện có 0 đơn" />
 
                         <TextView
                             android:id="@+id/txtEdit"
@@ -453,8 +442,8 @@
                         style="@style/txtHelveticaNowTextregular10" tools:text="@string/lbl_profile"/>
                 </LinearLayout>
             </LinearLayout>
+
         </FrameLayout>
 
     </LinearLayout>
-
 </LinearLayout>

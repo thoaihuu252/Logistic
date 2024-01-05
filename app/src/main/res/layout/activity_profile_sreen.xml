@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileSreen">
+    tools:context=".Sreen.ProfileSreen">
     <LinearLayout android:gravity="start"
         android:id="@+id/linearColumnellipseone"
         android:layout_height="match_parent"
@@ -19,17 +19,14 @@
             android:layout_height="586dp"
             android:gravity="center_horizontal"
             android:orientation="vertical">
-
             <ImageView
-                android:id="@+id/imageEllipseOne"
-                android:layout_width="@dimen/_84pxh"
-                android:layout_height="@dimen/_84pxh"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="@dimen/_24pxh"
-                android:layout_marginEnd="@dimen/_24pxh"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:scaleType="centerCrop"
-                tools:ignore="ContentDescription"
-                tools:src="@drawable/img_ellipse1" />
+                android:src="@drawable/img_ellipse1"></ImageView>
 
             <TextView
                 android:id="@+id/txtJohnSmith"
@@ -325,7 +322,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/linearColumnyournikemembe"
+                    android:id="@+id/btnLogout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.99"
@@ -340,8 +337,7 @@
                         android:layout_marginEnd="@dimen/_10pxh"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="@string/msg_your_nike_membe"
-                        tools:text="@string/msg_your_nike_membe" />
+                        android:text="Đăng xuất" />
 
                     <TextView
                         android:id="@+id/txtAvailableCounter"
@@ -352,9 +348,9 @@
                         android:layout_marginEnd="@dimen/_10pxh"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="@string/lbl_2_available"
+                        android:text="Thoát đăng nhập"
                         android:textSize="12sp"
-                        tools:text="@string/lbl_2_available" />
+                    />
                 </LinearLayout>
 
                 <ImageView
@@ -398,7 +394,8 @@
         <FrameLayout android:gravity="bottom|start"
             android:id="@+id/frameBottombar"
             android:layout_height="60dp"
-            android:layout_width="match_parent" style="@style/groupStylewhite_2">
+            android:layout_width="match_parent" style="@style/groupStylewhite_2"
+            android:layout_gravity="bottom">
             <LinearLayout android:id="@+id/linearRowhome"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent" android:orientation="horizontal">

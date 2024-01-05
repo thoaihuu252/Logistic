@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WarehouseSreen">
+    tools:context=".Sreen.WarehouseSreen">
     <LinearLayout android:gravity="start"
         android:id="@+id/linearColumnarrowleft"
         android:layout_height="match_parent"
@@ -43,8 +43,9 @@
                         android:layout_weight="0.71"
                         android:layout_width="0dp"
                         android:singleLine="true"
-                        android:text="@string/lbl_best_sellers"
-                        style="@style/txtHelveticaNowTextmedium16" tools:text="@string/lbl_best_sellers"/>
+                        android:text="Nhà kho"
+                        style="@style/txtHelveticaNowTextmedium16"
+                    />
                     <ImageView android:id="@+id/image24FadersHorizo"
                         android:layout_height="@dimen/_13pxh"
                         android:layout_marginBottom="@dimen/_5pxv"
@@ -66,7 +67,8 @@
                 </LinearLayout>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-        <LinearLayout android:gravity="start"
+        <LinearLayout
+            android:gravity="start"
             android:id="@+id/linearComplete"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_1pxv"
@@ -133,23 +135,27 @@
             </HorizontalScrollView>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:gravity="center_horizontal"
                 android:id="@+id/recyclerWarehouse"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_1pxh"
-                android:layout_marginTop="@dimen/_1pxv"
+                itemSpace="@{@dimen/_6pxh}"
                 android:layout_width="match_parent"
+                android:layout_height="562dp"
+                android:layout_marginStart="@dimen/_2pxh"
+                android:layout_marginTop="@dimen/_2pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2" itemSpace="@{@dimen/_6pxh}"
-                tools:itemCount="4" tools:listitem="@layout/row_warehouse"/>
+                app:spanCount="2" /> />
         </LinearLayout>
         <FrameLayout android:gravity="bottom|start"
             android:id="@+id/frameBottombar"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" style="@style/groupStylewhite_2">
-            <LinearLayout android:id="@+id/linearRowhome"
+            android:layout_width="match_parent"
+            style="@style/groupStylewhite_2">
+            <LinearLayout
+                android:id="@+id/linearRowhome"
                 android:layout_height="match_parent"
-                android:layout_width="match_parent" android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
                 <LinearLayout android:id="@+id/buttonHome"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/_1pxv"
@@ -277,5 +283,4 @@
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
