@@ -13,28 +13,28 @@
         android:theme="@style/Theme.AndroiLogictic"
         tools:targetApi="31">
         <activity
-            android:name=".WarehouseSreen"
+            android:name=".Sreen.WarehouseSreen"
             android:exported="false" />
         <activity
-            android:name=".ProfileSreen"
+            android:name=".Sreen.ProfileSreen"
             android:exported="false" />
         <activity
-            android:name=".OrderSreen"
+            android:name=".Sreen.OrderSreen"
             android:exported="false" />
         <activity
-            android:name=".CompleteSreen"
+            android:name=".Sreen.CompleteSreen"
             android:exported="false" />
         <activity
-            android:name=".RegisterSreen"
+            android:name=".Sreen.RegisterSreen"
             android:exported="false" />
         <activity
-            android:name=".LoginSreen"
+            android:name=".Sreen.LoginSreen"
             android:exported="false" />
         <activity
-            android:name=".MainSreen"
+            android:name=".Sreen.MainSreen"
             android:exported="false" />
         <activity
-            android:name=".Splash"
+            android:name=".Sreen.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

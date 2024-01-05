@@ -1,6 +1,5 @@
-package com.example.androilogictic
+package com.example.androilogictic.Sreen
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
+import com.example.androilogictic.R
 
 class Splash : AppCompatActivity() {
 
