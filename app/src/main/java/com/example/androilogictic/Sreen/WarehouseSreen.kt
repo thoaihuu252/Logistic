@@ -11,6 +11,7 @@ import com.example.androilogictic.Adapter.RowWarehouseAdapter
 import com.example.androilogictic.Model.CompleteOrder
 import com.example.androilogictic.Model.Warehouse
 import com.example.androilogictic.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class WarehouseSreen : AppCompatActivity() {
     private lateinit var newRecyclerView: RecyclerView
@@ -18,21 +19,41 @@ class WarehouseSreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_warehouse_sreen)
-        val warehouse: LinearLayout = findViewById(R.id.buttonWarehouse)
-        val home: LinearLayout = findViewById(R.id.buttonHome)
-        val order: LinearLayout = findViewById(R.id.buttonOrder)
-        val profile: LinearLayout = findViewById(R.id.buttonProfile)
-        val complete: LinearLayout = findViewById(R.id.buttonComplete)
+
 
         fun navigateToScreen(destinationClass: Class<*>) {
             val intent = Intent(this, destinationClass)
             startActivity(intent)
         }
-        warehouse.setOnClickListener { navigateToScreen(WarehouseSreen::class.java) }
-        home.setOnClickListener { navigateToScreen(MainSreen::class.java) }
-        profile.setOnClickListener { navigateToScreen(ProfileSreen::class.java) }
-        order.setOnClickListener { navigateToScreen(OrderSreen::class.java) }
-        complete.setOnClickListener { navigateToScreen(CompleteSreen::class.java) }
+
+        val bottomNavView: BottomNavigationView = findViewById(R.id.bottomNavView)
+        bottomNavView.setSelectedItemId(R.id.menu_warehouse);
+        bottomNavView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_home -> {
+                    navigateToScreen(MainSreen::class.java)
+                    true
+                }
+                R.id.menu_warehouse -> {
+                    navigateToScreen(WarehouseSreen::class.java)
+                    true
+                }
+                R.id.menu_complete -> {
+                    navigateToScreen(CompleteSreen::class.java)
+                    true
+                }
+                R.id.menu_order -> {
+                    navigateToScreen(OrderSreen::class.java)
+                    true
+                }
+                R.id.menu_profile -> {
+                    navigateToScreen(ProfileSreen::class.java)
+                    true
+                }
+
+                else -> false
+            }
+        }
 
         newArrayList = arrayListOf(
             Warehouse( "Nhà kho 1","TP Thủ đức",89) ,
