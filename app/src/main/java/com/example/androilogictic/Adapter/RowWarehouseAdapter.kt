@@ -12,6 +12,8 @@ import com.example.androilogictic.R
 
 
 class RowWarehouseAdapter(private val newList : ArrayList<Warehouse>) : RecyclerView.Adapter<RowWarehouseAdapter.WarehouseHolder>(){
+
+    var onClick : ((Warehouse)-> Unit)? = null
     class WarehouseHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
 //        Wh = warehouse
         val nameWh : TextView = itemView.findViewById(R.id.txtNameWarehouse)
@@ -35,5 +37,10 @@ class RowWarehouseAdapter(private val newList : ArrayList<Warehouse>) : Recycler
         holder.nameWh.text = currentItem.nameWarehouse
         holder.areaWh.text = currentItem.areaWarehouse
         holder.orderNumberWh.text = number
+        holder.itemView.setOnClickListener{
+            onClick?.invoke(currentItem)
+        }
+
+
     }
 }

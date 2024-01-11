@@ -48,8 +48,19 @@
                         android:layout_marginEnd="@dimen/_10pxh"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="Hello bro" />
+                        android:text="Hello" />
 
+                    <TextView
+                        android:id="@+id/txtWeather"
+                        style="@style/txtHelveticaNowTextregular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2pxv"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/lbl_tuesday_3_may"
+                        tools:text="@string/lbl_tuesday_3_may" />
                     <TextView
                         android:id="@+id/txtDuration"
                         style="@style/txtHelveticaNowTextregular16"
@@ -61,6 +72,9 @@
                         android:singleLine="true"
                         android:text="@string/lbl_tuesday_3_may"
                         tools:text="@string/lbl_tuesday_3_may" />
+
+
+
                 </LinearLayout>
 
                 <ImageView
@@ -78,9 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginStart="@dimen/_21pxh"
-            android:layout_marginTop="@dimen/_12pxv"
-            android:layout_marginEnd="@dimen/_21pxh"
+            android:layout_marginEnd="@dimen/_40pxh"
             android:ellipsize="end"
             android:singleLine="true"
             android:text="Thoaidz"/>
@@ -138,10 +150,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10sp"
                         android:ellipsize="end"
+                        android:textSize="@dimen/_25sp"
                         android:singleLine="true"
-                        android:text="@string/lbl_56_98"
-                        tools:text="@string/lbl_56_98" />
+                        android:text="10.000.000 VND" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -181,6 +194,65 @@
                         android:singleLine="true"
                         android:text="@string/lbl_15_3"
                         tools:text="@string/lbl_15_3" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frameMoneyOrder"
+            android:background="@drawable/rectangle_gr_orgrane"
+            android:layout_width="@dimen/_345pxh"
+            android:layout_height="@dimen/_112pxv"
+            android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/_16sp"
+            android:layout_marginTop="@dimen/_21pxv">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_25pxv"
+                android:layout_marginEnd="@dimen/_25pxh"
+                android:layout_marginBottom="@dimen/_24pxv"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.76"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/txtMulishsemibold16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="Tiền hàng" />
+
+                    <TextView
+                        android:id="@+id/txtMoneyOrder"
+                        style="@style/txtMulishbold32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10sp"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/_25sp"
+                        android:singleLine="true"
+                        android:text="10.000.000 VND" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/groupStylewhite_A700cornerRadius"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14pxv"
+                    android:layout_marginBottom="@dimen/_15pxv"
+                    android:layout_weight="0.24"
+                    android:orientation="horizontal">
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
@@ -259,28 +331,27 @@
                     <TextView
                         android:id="@+id/txtWithPaty"
                         style="@style/txtRalewayromanmedium10"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_4pxv"
                         android:layout_weight="0.66"
                         android:ellipsize="end"
                         android:singleLine="true"
                         android:textSize="12sp"
-                        android:text="Hiện có 0 đơn" />
+                        android:text="Hiện có " />
 
                     <TextView
                         android:id="@+id/txtEdit"
                         style="@style/txtRalewayromanbold11"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_159pxh"
+                        android:layout_marginStart="@dimen/_160pxh"
                         android:layout_marginTop="@dimen/_2pxv"
                         android:layout_weight="0.34"
                         android:ellipsize="end"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:singleLine="true"
-                        android:text="@string/lbl_edit"
-                        tools:text="@string/lbl_edit" />
+                        android:text="Xem" />
                 </LinearLayout>
 
                 <TextView
@@ -293,9 +364,10 @@
                     android:ellipsize="end"
                     android:textSize="12sp"
                     android:singleLine="true"
-                    android:text="@string/msg_tuesday_04_30p"
-                    tools:text="@string/msg_tuesday_04_30p" />
+                    android:text="0 đơn" />
             </LinearLayout>
+
+
         </LinearLayout>
 
     </LinearLayout>
