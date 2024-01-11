@@ -59,11 +59,11 @@ class CompleteSreen : AppCompatActivity() {
 
 
         completeList = arrayListOf(
-            CompleteOrder(R.drawable.img_vector, "Name1", "Phone1", "$100", "Area1"),
-            CompleteOrder(R.drawable.img_vector, "Name2", "Phone2", "$200", "Area2"),
-            CompleteOrder(R.drawable.img_vector, "Name3", "Phone3", "$150", "Area3"),
-            CompleteOrder(R.drawable.img_vector, "Name4", "Phone4", "$180", "Area4"),
-            CompleteOrder(R.drawable.img_vector, "Name5", "Phone5", "$120", "Area5")
+            CompleteOrder("1",R.drawable.img_vector, "Name1", "Phone1", "$100", "Area1"),
+            CompleteOrder("2",R.drawable.img_vector, "Name2", "Phone2", "$200", "Area2"),
+            CompleteOrder("3",R.drawable.img_vector, "Name3", "Phone3", "$150", "Area3"),
+            CompleteOrder("4",R.drawable.img_vector, "Name4", "Phone4", "$180", "Area4"),
+            CompleteOrder("5",R.drawable.img_vector, "Name5", "Phone5", "$120", "Area5")
         )
         newRecyclerView = findViewById(R.id.recyclerComplete)
         newRecyclerView.setHasFixedSize(true)

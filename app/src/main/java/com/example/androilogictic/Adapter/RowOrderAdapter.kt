@@ -9,10 +9,11 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androilogictic.Model.CompleteOrder
 import com.example.androilogictic.Model.Order
+import com.example.androilogictic.Model.Warehouse
 import com.example.androilogictic.R
 
 class RowOrderAdapter(private val newList : ArrayList<Order> ) :  RecyclerView.Adapter<RowOrderAdapter.OrderViewHolder>(){
-
+    var onClick : ((Order)-> Unit)? = null
     class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val nameKhach : TextView = itemView.findViewById(R.id.txtNameOrder)
         val phone : TextView = itemView.findViewById(R.id.txtPhoneNumberOrder)
@@ -36,5 +37,8 @@ class RowOrderAdapter(private val newList : ArrayList<Order> ) :  RecyclerView.A
         holder.price.text = currentItem.priceOrder
         holder.nameKhach.text = currentItem.nameOrder
         holder.area.text = currentItem.areaOrder
+        holder.itemView.setOnClickListener{
+            onClick?.invoke(currentItem)
+        }
     }
 }

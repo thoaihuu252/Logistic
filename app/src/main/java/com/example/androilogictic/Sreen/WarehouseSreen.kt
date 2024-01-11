@@ -56,14 +56,20 @@ class WarehouseSreen : AppCompatActivity() {
         }
 
         newArrayList = arrayListOf(
-            Warehouse( "Nhà kho 1","TP Thủ đức",89) ,
-            Warehouse( "Nhà kho 2","TP Thủ đức",89) ,
-            Warehouse( "Nhà kho 3","TP Thủ đức",89) ,
-            Warehouse( "Nhà kho 4","TP Thủ đức",89) ,
-            Warehouse( "Nhà kho 5","TP Thủ đức",89) ,
+            Warehouse( "1","Nhà kho 1","TP Thủ đức",89) ,
+            Warehouse( "2","Nhà kho 2","TP Thủ đức",89) ,
+            Warehouse( "3","Nhà kho 3","TP Thủ đức",89) ,
+            Warehouse( "4","Nhà kho 4","TP Thủ đức",89) ,
+            Warehouse( "5","Nhà kho 5","TP Thủ đức",89) ,
         )
         newRecyclerView = findViewById(R.id.recyclerWarehouse)
         newRecyclerView.setHasFixedSize(true)
-        newRecyclerView.adapter = RowWarehouseAdapter(newArrayList)
+        val WarehouseAdapter = RowWarehouseAdapter(newArrayList)
+        newRecyclerView.adapter = WarehouseAdapter
+        WarehouseAdapter.onClick = {
+            val intent = Intent(this, OrderDetailSreen::class.java)
+            intent.putExtra("warehouse",it)
+            startActivity(intent)
+        }
     }
 }

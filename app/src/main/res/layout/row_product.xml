@@ -1,0 +1,91 @@
+<!-- row_complete.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layoutRowProduct"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_1">
+        <View android:background="@color/gray_400"
+            android:id="@+id/lineVectorEleven"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_1pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_16pxv" android:layout_width="@dimen/_313pxh"/>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_16pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_marginTop="@dimen/_3pxv"
+                android:layout_weight="0.72" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="Tên shop:"></TextView>
+            <TextView
+                android:ellipsize="end"
+                android:id="@+id/txtNameShop"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_marginTop="@dimen/_3pxv"
+                android:layout_weight="0.72" android:layout_width="0dp"
+                android:singleLine="true"
+                android:textSize="@dimen/_17sp"
+                android:text="Majin Buu"
+                style="@style/txtMulishsemibold12"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearRowvector"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_19pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginStart="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_15pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <ImageButton
+                android:background="@drawable/rectangle_bg_cyan_50_radius_10"
+                android:id="@+id/imgOrder"
+                android:layout_height="@dimen/_44pxh"
+                android:layout_width="@dimen/_44pxh"
+                android:paddingHorizontal="@dimen/_12pxh"
+                android:paddingVertical="@dimen/_12pxv"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_vector_yellow_700" />
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearColumntambahsaldo"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2pxv"
+                android:layout_marginStart="@dimen/_8pxh"
+                android:layout_weight="0.72" android:layout_width="0dp" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtNameProduct"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="0123456789"
+                    style="@style/txtMulishbold16"/>
+                <TextView
+                    android:ellipsize="end"
+                    android:id="@+id/txtPriceProduct"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_3pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/lbl_5"
+                    style="@style/txtMulishsemibold14" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

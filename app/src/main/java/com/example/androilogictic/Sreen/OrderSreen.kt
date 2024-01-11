@@ -10,6 +10,7 @@ import com.example.androilogictic.Adapter.RowCompleteOrderAdapter
 import com.example.androilogictic.Adapter.RowOrderAdapter
 import com.example.androilogictic.Model.CompleteOrder
 import com.example.androilogictic.Model.Order
+import com.example.androilogictic.Model.Product
 import com.example.androilogictic.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -55,16 +56,26 @@ class OrderSreen : AppCompatActivity() {
         }
 
         newArrayList = arrayListOf(
-            Order( "Name1", "Phone1", "$100", "Area1"),
-            Order("Name2", "Phone2", "$200", "Area2"),
-            Order( "Name3", "Phone3", "$150", "Area3"),
-            Order( "Name4", "Phone4", "$180", "Area4"),
-            Order("Name5", "Phone5", "$120", "Area5")
+            Order( "1","Name1", "Phone1", "$100", "Area1"),
+            Order("2","Name2", "Phone2", "$200", "Area2"),
+            Order( "3","Name3", "Phone3", "$150", "Area3"),
+            Order( "4","Name3", "Phone3", "$150", "Area3"),
+            Order( "5","Name3", "Phone3", "$150", "Area3")
         )
+        val productList = arrayListOf(
+            Product("Product 1", "Product 1","shop","1000"),
+            Product("Product 2", "Product 2","shop","1000"),
+            Product("Product 3", "Product 3","shop","1000")
+        )
+
         newRecyclerView = findViewById(R.id.recyclerOrder)
         newRecyclerView.setHasFixedSize(true)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
-
-        newRecyclerView.adapter  = RowOrderAdapter(newArrayList)
+        val orderAdt = RowOrderAdapter(newArrayList)
+        newRecyclerView.adapter  = orderAdt
+        orderAdt.onClick ={
+            val bottomSheet = BottomSheet.newInstance(productList,it)
+            bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+        }
     }
 }
