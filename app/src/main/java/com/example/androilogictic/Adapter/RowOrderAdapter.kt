@@ -34,7 +34,7 @@ class RowOrderAdapter(private val newList : ArrayList<Order> ) :  RecyclerView.A
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val currentItem = newList[position]
         holder.phone.text = currentItem.phoneOrder
-        holder.price.text = currentItem.priceOrder
+        holder.price.text = currentItem.priceOrder.toString()
         holder.nameKhach.text = currentItem.nameOrder
         holder.area.text = currentItem.areaOrder
         holder.itemView.setOnClickListener{

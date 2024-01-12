@@ -33,7 +33,7 @@ class RowProductAdapter (private val newList : ArrayList<Product>) : RecyclerVie
         val currentItem = newList[position]
         holder.namePro.text = currentItem.nameProduct
         holder.nameShop.text = currentItem.nameShop
-        holder.pricePro.text = currentItem.priceProduct
+        holder.pricePro.text = currentItem.priceProduct.toString()
 
     }
 }

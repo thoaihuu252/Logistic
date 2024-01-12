@@ -56,16 +56,16 @@ class OrderSreen : AppCompatActivity() {
         }
 
         newArrayList = arrayListOf(
-            Order( "1","Name1", "Phone1", "$100", "Area1"),
-            Order("2","Name2", "Phone2", "$200", "Area2"),
-            Order( "3","Name3", "Phone3", "$150", "Area3"),
-            Order( "4","Name3", "Phone3", "$150", "Area3"),
-            Order( "5","Name3", "Phone3", "$150", "Area3")
+            Order( "1","Name1", "Phone1", 100, "Area1","Chờ",10),
+            Order("2","Name2", "Phone2", 200, "Area2","Chờ",10),
+            Order( "3","Name3", "Phone3", 150, "Area3","Chờ",10),
+            Order( "4","Name3", "Phone3", 150, "Area3","Chờ",10)
         )
         val productList = arrayListOf(
-            Product("Product 1", "Product 1","shop","1000"),
-            Product("Product 2", "Product 2","shop","1000"),
-            Product("Product 3", "Product 3","shop","1000")
+            Product("Product 1", "Product 1","shop",10,"url"),
+            Product("Product 1", "Product 2","shop",10,"url"),
+            Product("Product 1", "Product 3","shop",10,"url")
+
         )
 
         newRecyclerView = findViewById(R.id.recyclerOrder)
