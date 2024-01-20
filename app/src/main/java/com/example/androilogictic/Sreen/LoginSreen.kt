@@ -8,32 +8,56 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.androilogictic.Api.ApiProject
-import com.example.androilogictic.Api.ApiWeather
-import com.example.androilogictic.Model.CompleteOrder
 import com.example.androilogictic.Model.User
-import com.example.androilogictic.Model.WeatherResponse
 import com.example.androilogictic.R
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginSreen : AppCompatActivity() {
-    private  lateinit var userArrayList: ArrayList<User>
+    private val userArrayList: ArrayList<User> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_sreen)
 
         val username = findViewById<TextInputEditText>(R.id.usernameLogin)
         val pass = findViewById<TextInputEditText>(R.id.passwordLogin)
-
         val register = findViewById<Button>(R.id.registerButton)
         val login = findViewById<Button>(R.id.Login)
-//
         //APi
-        val callUser = ApiProject.RetrofitClient.apiUser.getUsers()
-        callUser .enqueue(object : Callback<List<User>> {
-            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+        getMyData()
+
+        //Listerner
+        register.setOnClickListener {
+            val intent = Intent(this, RegisterSreen::class.java)
+            startActivity(intent)
+        }
+
+
+        login.setOnClickListener {
+            val intent = Intent (this, MainSreen::class.java)
+            for (u in userArrayList) {
+                val uName =u.name
+                val uPass = u.password
+                if (username.text.toString().equals(uName)
+                    && pass.text.toString().equals(uPass)
+                ) {
+                    startActivity(intent)
+                    break
+                } else {
+                    showLoginFailedDialog()
+                }
+            }
+        }
+    }
+    // funtion getAPi bằng retrofit
+    private fun getMyData(){
+        val retroData = ApiProject.RetrofitClient.apiBuilder.getUsers()
+        retroData.enqueue(object : Callback<ArrayList<User>> {
+            override fun onResponse(call: Call<ArrayList<User>>, response: Response<ArrayList<User>>) {
                 if (response.isSuccessful) {
                     val users = response.body()
                     if (users != null) {
@@ -44,41 +68,26 @@ class LoginSreen : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<User>>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
                 Toast.makeText(applicationContext, "Đã xảy ra lỗi: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
 
-        //
-//        //Listerner
-        register.setOnClickListener {
-            val intent = Intent(this, RegisterSreen::class.java)
-            startActivity(intent)
-        }
-
-
-        login.setOnClickListener {
-            val intent = Intent (this, MainSreen::class.java)
-            val dialog = AlertDialog.Builder(this)
-            dialog.apply {
-                setTitle("Ngooo")
-                setMessage("Cook mọe mày di.....")
-                setNegativeButton("Hmm"){ dialogInterface: DialogInterface, i: Int -> dialogInterface.dismiss()}
-                setPositiveButton("Yahh sure"){ dialogInterface: DialogInterface, i: Int -> dialogInterface.dismiss()}
-            }
-            //for (u in userArrayList) {
-                val uName ="thoai" //u.nameUser
-                val uPass = "123"//u.pass
-                if (username.text.toString().equals(uName)
-                    && pass.text.toString().equals(uPass)
-                ) {
-                    startActivity(intent)
-                } else {
-                    dialog.show()
-                }
-            //}
-        }
-        // day month Year
-
     }
+    // thông báo đăng nhập sai
+    private fun showLoginFailedDialog() {
+        val context = this
+        val alertDialog = MaterialAlertDialogBuilder(context)
+            .setTitle("Đăng nhập thất bại")
+            .setMessage("Tên người dùng hoặc mật khẩu không đúng. Vui lòng thử lại.")
+            .setPositiveButton("OK") { dialogInterface, _ ->
+                dialogInterface.dismiss()
+            }
+            .setBackgroundInsetStart(16)
+            .setBackgroundInsetEnd(16)
+            .create()
+
+        alertDialog.show()
+    }
+
 }

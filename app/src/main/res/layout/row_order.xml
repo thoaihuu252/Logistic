@@ -21,36 +21,39 @@
             android:layout_marginStart="@dimen/_16pxh"
             android:layout_marginTop="@dimen/_16pxv"
             android:layout_width="match_parent" android:orientation="horizontal">
+
             <TextView
-                android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3pxv"
-                android:layout_weight="0.72" android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_weight="0.50"
                 android:singleLine="true"
                 android:text="Tên khách hàng:"></TextView>
+
             <TextView
-                android:ellipsize="end"
                 android:id="@+id/txtNameOrder"
+                style="@style/txtMulishsemibold12"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_3pxv"
                 android:layout_marginTop="@dimen/_3pxv"
-                android:layout_weight="0.72" android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_weight="0.72"
+                android:ellipsize="end"
                 android:singleLine="true"
-                android:textSize="@dimen/_17sp"
                 android:text="Majin Buu"
-                style="@style/txtMulishsemibold12"/>
+                android:textSize="@dimen/_17sp" />
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnAreaOrder"
                 android:layout_height="@dimen/_23pxv"
-                android:layout_marginStart="@dimen/_94pxh"
-                android:layout_width="@dimen/_61pxh"
+                android:layout_width="wrap_content"
                 android:paddingBottom="@dimen/_3pxv"
                 android:paddingEnd="@dimen/_8pxh"
                 android:paddingStart="@dimen/_8pxh"
                 android:paddingTop="@dimen/_3pxv"
                 android:singleLine="true"
-                android:text="Thủ đức"
+                android:text="29, November"
                 android:textAllCaps="false"
                 style="@style/btnSolidRounded"/>
         </LinearLayout>
@@ -95,34 +98,19 @@
                     android:singleLine="true"
                     android:text="@string/lbl_5"
                     style="@style/txtMulishsemibold14" />
-            </LinearLayout>
-            <LinearLayout android:gravity="end"
 
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5pxv"
-                android:layout_marginStart="@dimen/_8pxh"
-                android:layout_marginTop="@dimen/_3pxv"
-                android:layout_weight="0.13" android:layout_width="0dp" android:orientation="vertical">
                 <TextView
                     android:ellipsize="end"
-                    android:gravity="start"
-                    android:id="@+id/txtDatOrder"
+                    android:id="@+id/txtarea"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:singleLine="true"
-                    android:text="@string/lbl_29_nov"
-                    style="@style/txtMulishsemibold12" />
-                <TextView
-                    android:ellipsize="end"
-                    android:id="@+id/txt1230"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
                     android:layout_marginTop="@dimen/_3pxv"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:singleLine="true"
-                    android:text="@string/lbl_12_30"
-                    style="@style/txtMulishsemibold12"/>
+                    android:text="135,ấp Nhuận Trạch,xã Cẩm Sơn, MCN, tỉnh BT"
+                    style="@style/txtMulishsemibold14" />
             </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 

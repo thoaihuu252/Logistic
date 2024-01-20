@@ -3,19 +3,19 @@ package com.example.androilogictic.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androilogictic.Model.CompleteOrder
+import com.example.androilogictic.Model.Order
 import com.example.androilogictic.R
 
-class RowCompleteOrderAdapter(private val newList : ArrayList<CompleteOrder> ) :
+class RowCompleteOrderAdapter(private val newList : ArrayList<Order> ) :
     RecyclerView.Adapter<RowCompleteOrderAdapter.CompleteViewHolder>() {
+    var onClick : ((Order)-> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CompleteViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.row_complete,parent,false)
-        return CompleteViewHolder(itemView)
+        return RowCompleteOrderAdapter.CompleteViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
@@ -24,14 +24,15 @@ class RowCompleteOrderAdapter(private val newList : ArrayList<CompleteOrder> ) :
 
     override fun onBindViewHolder(holder: CompleteViewHolder, position: Int) {
         val currentItem = newList[position]
-        holder.img.setImageResource(currentItem.img)
-        holder.phone.text = currentItem.phone
-        holder.price.text = currentItem.price
-        holder.nameKhach.text = currentItem.name
-        holder.area.text = currentItem.area
+        holder.phone.text = currentItem.phoneOrder
+        holder.price.text = currentItem.priceOrder.toString()
+        holder.nameKhach.text = currentItem.nameOrder
+        holder.area.text = currentItem.areaOrder
+        holder.itemView.setOnClickListener{
+            onClick?.invoke(currentItem)
+        }
     }
     class CompleteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val img : ImageButton = itemView.findViewById(R.id.imgComplete)
         val nameKhach : TextView = itemView.findViewById(R.id.txtNameComplete)
         val phone : TextView = itemView.findViewById(R.id.txtPhoneNumberComplete)
         val price : TextView = itemView.findViewById(R.id.txtPriceComplete)

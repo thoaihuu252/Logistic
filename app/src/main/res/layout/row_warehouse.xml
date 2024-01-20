@@ -15,18 +15,8 @@
                 android:layout_height="@dimen/_184pxh"
                 android:layout_width="@dimen/_184pxh"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_image_184x184" />
-            <ImageButton
-                android:background="@drawable/rectangle_bg_white_a700_radius_17"
-                android:id="@+id/btnFavorite"
-                android:layout_gravity="top|end"
-                android:layout_height="@dimen/_34pxh"
-                android:layout_marginHorizontal="@dimen/_12pxh"
-                android:layout_marginVertical="@dimen/_12pxv"
-                android:layout_width="@dimen/_34pxh"
-                android:paddingHorizontal="@dimen/_8pxh"
-                android:paddingVertical="@dimen/_8pxv"
-                android:scaleType="fitCenter" />
+                android:src="@drawable/warehouse" />
+
         </FrameLayout>
         <TextView android:ellipsize="end" android:gravity="start"
             android:id="@+id/txtNameWarehouse"

@@ -63,10 +63,89 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/linearColumnthumbsup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_27pxh"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_4pxv"
+                android:layout_weight="0.37"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/round_trending_up_24" />
+
+                <TextView
+
+                    style="@style/txtHelveticaNowTextregular12"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12pxv"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Lịch sử "
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31pxv"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginLeft="@dimen/_5sp"
+                android:layout_marginBottom="@dimen/_7pxv"
+                android:layout_weight="0.02"
+                android:background="@color/bluegray_100" />
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_4pxv"
+                android:layout_weight="0.37"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/baseline_password_24" />
+
+                <TextView
+
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12pxv"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Đổi mật khẩu"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_31pxv"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginLeft="@dimen/_5sp"
+                android:layout_marginBottom="@dimen/_7pxv"
+                android:layout_weight="0.02"
+                android:background="@color/bluegray_100" />
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20pxh"
                 android:layout_marginTop="@dimen/_4pxv"
                 android:layout_weight="0.37"
                 android:gravity="center_horizontal"
@@ -74,25 +153,23 @@
 
                 <ImageView
                     android:id="@+id/imageThumbsup"
-                    android:layout_width="@dimen/_21pxh"
-                    android:layout_height="@dimen/_15pxh"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="@dimen/_8pxh"
-                    android:layout_marginEnd="@dimen/_36pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_thumbsup" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/baseline_notifications_none_24" />
 
                 <TextView
                     android:id="@+id/txtOrders"
                     style="@style/txtHelveticaNowTextregular12"
-                    android:layout_width="match_parent"
+                    android:layout_width="78dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_12pxv"
-                    android:layout_marginEnd="@dimen/_27pxh"
+
                     android:ellipsize="end"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:singleLine="true"
-                    android:text="@string/lbl_orders"
+                    android:text="Thông báo"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -100,130 +177,47 @@
                 android:id="@+id/lineRectangle198"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_31pxv"
-                android:layout_marginTop="@dimen/_7pxv"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_marginLeft="@dimen/_5sp"
                 android:layout_marginBottom="@dimen/_7pxv"
-                android:layout_weight="0.01"
+                android:layout_weight="0.02"
                 android:background="@color/bluegray_100" />
 
             <LinearLayout
-                android:id="@+id/linearColumnsettings"
+                android:id="@+id/linearColumnthumbsup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_33pxh"
-                android:layout_marginTop="@dimen/_3pxv"
-                android:layout_weight="0.15"
-                android:gravity="start"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageSettings"
-                    android:layout_width="@dimen/_19pxh"
-                    android:layout_height="@dimen/_16pxh"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/_3pxh"
-                    android:layout_marginEnd="@dimen/_3pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_settings" />
-
-                <TextView
-                    android:id="@+id/txtPass"
-                    style="@style/txtHelveticaNowTextregular12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_11pxv"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:text="@string/lbl_pass"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/lineRectangle199"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_31pxv"
-                android:layout_marginStart="@dimen/_33pxh"
-                android:layout_marginTop="@dimen/_7pxv"
-                android:layout_marginBottom="@dimen/_7pxv"
-                android:layout_weight="0.01"
-                android:background="@color/bluegray_100" />
-
-            <LinearLayout
-                android:id="@+id/linearColumncalendar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_28pxh"
-                android:layout_marginTop="@dimen/_1pxv"
-                android:layout_weight="0.21"
+                android:layout_marginStart="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_20pxh"
+                android:layout_marginTop="@dimen/_4pxv"
+                android:layout_weight="0.37"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageCalendar"
-                    android:layout_width="@dimen/_18pxh"
-                    android:layout_height="@dimen/_19pxh"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/_9pxh"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_order" />
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/baseline_settings_24" />
 
                 <TextView
-                    android:id="@+id/txtEvents"
+
                     style="@style/txtHelveticaNowTextregular12"
-                    android:layout_width="match_parent"
+                    android:layout_width="78dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginTop="@dimen/_12pxv"
                     android:ellipsize="end"
-                    android:gravity="start"
+                    android:gravity="center"
                     android:singleLine="true"
-                    android:text="Hàng"
+                    android:text="Lịch sử giao dịch"
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/lineRectangle200"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_31pxv"
-                android:layout_marginStart="@dimen/_28pxh"
-                android:layout_marginTop="@dimen/_7pxv"
-                android:layout_marginBottom="@dimen/_7pxv"
-                android:layout_weight="0.01"
-                android:background="@color/bluegray_100" />
 
-            <LinearLayout
-                android:id="@+id/linearColumnsearch"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_24pxh"
-                android:layout_marginTop="@dimen/_2pxv"
-                android:layout_marginEnd="@dimen/_24pxh"
-                android:layout_weight="0.25"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageSearch"
-                    android:layout_width="@dimen/_19pxh"
-                    android:layout_height="@dimen/_19pxh"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/_12pxh"
-                    android:layout_marginEnd="@dimen/_12pxh"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_search"
-                    />
 
-                <TextView
-                    android:id="@+id/txtSettingsOne"
-                    style="@style/txtHelveticaNowTextregular12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_11pxv"
-                    android:ellipsize="end"
-                    android:gravity="start"
-                    android:singleLine="true"
-                    android:text="@string/lbl_settings"
-                    android:textSize="12sp" />
-            </LinearLayout>
         </LinearLayout>
 
         <View

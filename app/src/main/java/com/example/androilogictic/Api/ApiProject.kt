@@ -11,14 +11,16 @@ interface ApiProject {
 
     //APi :http://localhost:8080/
     @GET("api/users")
-    fun getUsers(): Call<List<User>>
+    fun getUsers(): Call<ArrayList<User>>
 
     @GET("api/orders")
-    fun getOrder(): Call<List<Order>>
+    fun getOrder(): Call<ArrayList<Order>>
+
+
     object RetrofitClient {
         private const val BASE_URL =  "http://192.168.1.129:8080/"
 
-        val apiUser: ApiProject by lazy {
+        val apiBuilder: ApiProject by lazy {
             val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

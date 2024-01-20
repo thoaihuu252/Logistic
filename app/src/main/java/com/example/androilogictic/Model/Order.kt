@@ -1,11 +1,14 @@
 package com.example.androilogictic.Model
 
+import com.google.gson.annotations.SerializedName
+
 data class Order(
-    var id : String,
-    var nameOrder : String,
-    var phoneOrder : String,
-    var priceOrder : Int,
-    var areaOrder : String,
-    var status : String,
-    var ship : Int
+    @SerializedName("id") val id: String,
+    @SerializedName("nameOrder") val nameOrder: String,
+    @SerializedName("phoneOrder") val phoneOrder: String,
+    @SerializedName("priceOrder") val priceOrder: Int,
+    @SerializedName("areaOrder") val areaOrder: String,
+    @SerializedName("status") val status: String,
+    @SerializedName("ship") val ship: Int,
+    @SerializedName("productList") val productList: List<Product>
 )

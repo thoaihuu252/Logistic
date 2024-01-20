@@ -3,29 +3,26 @@ package com.example.androilogictic.Sreen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androilogictic.Adapter.RowCompleteOrderAdapter
 import com.example.androilogictic.Adapter.RowOrderAdapter
-import com.example.androilogictic.Model.CompleteOrder
+import com.example.androilogictic.Api.ApiProject
 import com.example.androilogictic.Model.Order
 import com.example.androilogictic.Model.Product
 import com.example.androilogictic.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class OrderSreen : AppCompatActivity() {
     private lateinit var newRecyclerView: RecyclerView
-    private  lateinit var newArrayList: ArrayList<Order>
+    private var orderList: ArrayList<Order> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_sreen)
-
-
-        fun navigateToScreen(destinationClass: Class<*>) {
-            val intent = Intent(this, destinationClass)
-            startActivity(intent)
-        }
         val bottomNavView: BottomNavigationView = findViewById(R.id.bottomNavView)
         bottomNavView.setSelectedItemId(R.id.menu_order);
         bottomNavView.setOnNavigationItemSelectedListener { menuItem ->
@@ -54,27 +51,46 @@ class OrderSreen : AppCompatActivity() {
                 else -> false
             }
         }
-
-        newArrayList = arrayListOf(
-            Order( "1","Name1", "Phone1", 100, "Area1","Chờ",10),
-            Order("2","Name2", "Phone2", 200, "Area2","Chờ",10),
-            Order( "3","Name3", "Phone3", 150, "Area3","Chờ",10),
-            Order( "4","Name3", "Phone3", 150, "Area3","Chờ",10)
-        )
-        val productList = arrayListOf(
-            Product("Product 1", "Product 1","shop",10,"url"),
-            Product("Product 1", "Product 2","shop",10,"url"),
-            Product("Product 1", "Product 3","shop",10,"url")
-
-        )
-
+        getMyDataOrder()
+    }
+    // chuyển tab
+    private fun navigateToScreen(destinationClass: Class<*>) {
+        val intent = Intent(this, destinationClass)
+        startActivity(intent)
+    }
+    //API
+    private fun getMyDataOrder(){
+        val retroData = ApiProject.RetrofitClient.apiBuilder.getOrder()
+        retroData.enqueue(object : Callback<ArrayList<Order>> {
+            override fun onResponse(call: Call<ArrayList<Order>>, response: Response<ArrayList<Order>>) {
+                if (response.isSuccessful) {
+                    val orders = response.body()
+                    if (orders != null) {
+                        for (od : Order in orders) {
+                            if (!od.status.equals("Complete")) {
+                                orderList.add(od)
+                            }
+                        }
+                        setAdapter(orderList)
+                    }
+                } else {
+                    Toast.makeText(applicationContext, "Có lỗi khi lấy dữ liệu từ API", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<ArrayList<Order>>, t: Throwable) {
+                Toast.makeText(applicationContext, "Đã xảy ra lỗi: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+    // fun Adapter
+    private fun setAdapter( list : ArrayList<Order> ){
         newRecyclerView = findViewById(R.id.recyclerOrder)
         newRecyclerView.setHasFixedSize(true)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
-        val orderAdt = RowOrderAdapter(newArrayList)
+        val orderAdt = RowOrderAdapter(list)
         newRecyclerView.adapter  = orderAdt
         orderAdt.onClick ={
-            val bottomSheet = BottomSheet.newInstance(productList,it)
+            val bottomSheet = BottomSheet.newInstance(it.productList as ArrayList<Product>,it)
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }
     }
