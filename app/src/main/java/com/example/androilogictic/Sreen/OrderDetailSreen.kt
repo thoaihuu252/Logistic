@@ -13,6 +13,7 @@ import com.example.androilogictic.R
 
 class OrderDetailSreen : AppCompatActivity() {
     private lateinit var newRecyclerView: RecyclerView
+    private var orderList: ArrayList<Order> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_detail_sreen)
@@ -27,17 +28,11 @@ class OrderDetailSreen : AppCompatActivity() {
             onBackPressed()
         }
 
-        val newArrayList = arrayListOf(
-            Order( "1","Name1", "Phone1", 100, "Area1","Chờ",10),
-            Order("2","Name2", "Phone2", 200, "Area2","Chờ",10),
-            Order( "3","Name3", "Phone3", 150, "Area3","Chờ",10),
-            Order( "4","Name3", "Phone3", 150, "Area3","Chờ",10)
-        )
 
         newRecyclerView = findViewById(R.id.rcv_order_wh)
         newRecyclerView.setHasFixedSize(true)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
-        val orderAdt = RowOrderAdapter(newArrayList)
+        val orderAdt = RowOrderAdapter(orderList)
         newRecyclerView.adapter  = orderAdt
     }
 }

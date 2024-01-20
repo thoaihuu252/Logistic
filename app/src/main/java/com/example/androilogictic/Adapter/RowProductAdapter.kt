@@ -31,9 +31,9 @@ class RowProductAdapter (private val newList : ArrayList<Product>) : RecyclerVie
 
     override fun onBindViewHolder(holder: ProductHolder, position: Int) {
         val currentItem = newList[position]
-        holder.namePro.text = currentItem.nameProduct
-        holder.nameShop.text = currentItem.nameShop
-        holder.pricePro.text = currentItem.priceProduct.toString()
+        holder.namePro.text = currentItem.name
+        holder.nameShop.text = currentItem.shop
+        holder.pricePro.text = currentItem.price.toString()
 
     }
 }

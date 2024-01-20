@@ -3,13 +3,10 @@ package com.example.androilogictic.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androilogictic.Model.CompleteOrder
 import com.example.androilogictic.Model.Order
-import com.example.androilogictic.Model.Warehouse
 import com.example.androilogictic.R
 
 class RowOrderAdapter(private val newList : ArrayList<Order> ) :  RecyclerView.Adapter<RowOrderAdapter.OrderViewHolder>(){

@@ -20,43 +20,45 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_11pxv"
                 android:layout_marginEnd="@dimen/_16pxh"
-                android:layout_marginStart="@dimen/_23pxh"
                 android:layout_marginTop="@dimen/_15pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
 
                 <LinearLayout android:id="@+id/linearRowjordanflighte"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_3pxh"
-                    android:layout_marginStart="@dimen/_80pxh"
                     android:layout_marginTop="@dimen/_1pxv"
                     android:layout_weight="0.97"
                     android:layout_width="0dp" android:orientation="horizontal">
-                    <TextView
-                        android:ellipsize="end"
-                        android:id="@+id/txtJordanFlightE"
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.71"
-                        android:layout_width="0dp"
-                        android:singleLine="true"
-                        android:text="Đơn hàng hoàn thành"
-                        style="@style/txtHelveticaNowTextmedium16" />
-                    <ImageView android:id="@+id/image24FadersHorizo"
-                        android:layout_height="@dimen/_13pxh"
-                        android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_marginStart="@dimen/_63pxh"
-                        android:layout_marginTop="@dimen/_4pxv"
-                        android:layout_width="@dimen/_16pxh"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_24fadershorizo"/>
-                    <ImageView
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="?android:selectableItemBackground"
+                        android:src="@drawable/baseline_arrow_back_24" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:text="Đơn hàng hoàn thành"/>
+
+                    <ImageButton
                         android:id="@+id/btnSearch"
-                        android:layout_height="@dimen/_18pxh"
-                        android:layout_marginBottom="@dimen/_3pxv"
-                        android:layout_marginStart="@dimen/_26pxh"
-                        android:layout_marginTop="@dimen/_2pxv"
-                        android:layout_width="@dimen/_18pxh"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_24magnifyinggl"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="?android:selectableItemBackground"
+                        android:src="@drawable/baseline_search_24" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -69,33 +71,41 @@
             <LinearLayout
                 android:id="@+id/linearTabbar"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:layout_width="wrap_content"
                 android:orientation="horizontal">
                 <androidx.appcompat.widget.AppCompatButton
                     android:ellipsize="end"
                     android:gravity="center"
                     android:id="@+id/btnAll"
+
                     android:layout_height="@dimen/_56pxv"
                     android:layout_width="@dimen/_67pxh"
                     android:paddingBottom="@dimen/_16pxv"
                     android:paddingEnd="@dimen/_24pxh"
                     android:paddingStart="@dimen/_24pxh"
                     android:paddingTop="@dimen/_16pxv"
+                    android:paddingRight="10dp"
                     android:singleLine="true"
+                    android:background="@drawable/custom_button"
                     android:text="@string/lbl_all"
                     android:textAllCaps="false" />
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/sortAscendingButton"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:id="@+id/btn2"
+                    android:layout_marginLeft="@dimen/_10sp"
+                    android:layout_height="@dimen/_56pxv"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/_16pxv"
                     android:paddingEnd="@dimen/_24pxh"
                     android:paddingStart="@dimen/_24pxh"
                     android:paddingTop="@dimen/_16pxv"
+                    android:paddingRight="10dp"
                     android:singleLine="true"
+                    android:background="@drawable/custom_button"
                     android:text="Xếp theo giá"
-                    android:drawableEnd="@drawable/ic_sort_ascending" />
-
+                    android:textAllCaps="false" />
             </LinearLayout>
         </HorizontalScrollView>
 

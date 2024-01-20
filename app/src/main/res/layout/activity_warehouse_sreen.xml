@@ -11,56 +11,54 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         style="@style/groupStylewhite_A700">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarToolbar"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            app:contentInsetStart="0dp" style="@style/groupStylewhite_A700">
-            <LinearLayout android:id="@+id/linearRowarrowleft"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_11pxv"
-                android:layout_marginEnd="@dimen/_16pxh"
-                android:layout_marginStart="@dimen/_23pxh"
-                android:layout_marginTop="@dimen/_15pxv"
-                android:layout_width="match_parent" android:orientation="horizontal">
+        <LinearLayout android:id="@+id/linearRowarrowleft"
 
-                <LinearLayout android:id="@+id/linearRowjordanflighte"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_11pxv"
+            android:layout_marginEnd="@dimen/_16pxh"
+            android:layout_marginTop="@dimen/_15pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+
+            <LinearLayout android:id="@+id/linearRowjordanflighte"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3pxh"
+                android:layout_marginTop="@dimen/_1pxv"
+                android:layout_weight="0.97"
+                android:layout_width="0dp" android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_3pxh"
-                    android:layout_marginStart="@dimen/_80pxh"
-                    android:layout_marginTop="@dimen/_1pxv"
-                    android:layout_weight="0.97"
-                    android:layout_width="0dp" android:orientation="horizontal">
-                    <TextView
-                        android:ellipsize="end"
-                        android:id="@+id/txtJordanFlightE"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.71"
-                        android:layout_width="0dp"
-                        android:singleLine="true"
-                        android:text="Khu vực kho hàng"
-                        style="@style/txtHelveticaNowTextmedium16" />
-                    <ImageView android:id="@+id/image24FadersHorizo"
-                        android:layout_height="@dimen/_13pxh"
-                        android:layout_marginBottom="@dimen/_5pxv"
-                        android:layout_marginStart="@dimen/_63pxh"
-                        android:layout_marginTop="@dimen/_4pxv"
-                        android:layout_width="@dimen/_16pxh"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_24fadershorizo"/>
-                    <ImageView
-                        android:id="@+id/btnSearch"
-                        android:layout_height="@dimen/_18pxh"
-                        android:layout_marginBottom="@dimen/_3pxv"
-                        android:layout_marginStart="@dimen/_26pxh"
-                        android:layout_marginTop="@dimen/_2pxv"
-                        android:layout_width="@dimen/_18pxh"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_24magnifyinggl"/>
-                </LinearLayout>
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="?android:selectableItemBackground"
+                    android:src="@drawable/baseline_arrow_back_24" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="16dp"
+                    android:text="Khu vực kho hàng"/>
+
+                <ImageButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="?android:selectableItemBackground"
+                    android:src="@drawable/baseline_search_24" />
             </LinearLayout>
-        </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
         <HorizontalScrollView
+
             android:fillViewport="true"
             android:id="@+id/horizontalScrollHorizontalscrollall"
             android:layout_height="wrap_content"
@@ -70,21 +68,40 @@
                 android:id="@+id/linearTabbar"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:paddingLeft="10dp"
                 android:orientation="horizontal">
                 <androidx.appcompat.widget.AppCompatButton
                     android:ellipsize="end"
                     android:gravity="center"
                     android:id="@+id/btnAll"
+
                     android:layout_height="@dimen/_56pxv"
                     android:layout_width="@dimen/_67pxh"
                     android:paddingBottom="@dimen/_16pxv"
                     android:paddingEnd="@dimen/_24pxh"
                     android:paddingStart="@dimen/_24pxh"
                     android:paddingTop="@dimen/_16pxv"
+                    android:paddingRight="10dp"
                     android:singleLine="true"
+                    android:background="@drawable/custom_button"
                     android:text="@string/lbl_all"
                     android:textAllCaps="false" />
-
+                <androidx.appcompat.widget.AppCompatButton
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:id="@+id/btn2"
+                    android:layout_marginLeft="@dimen/_10sp"
+                    android:layout_height="@dimen/_56pxv"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_24pxh"
+                    android:paddingStart="@dimen/_24pxh"
+                    android:paddingTop="@dimen/_16pxv"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:background="@drawable/custom_button"
+                    android:text="Xếp theo giá"
+                    android:textAllCaps="false" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -93,9 +110,10 @@
             itemSpace="@{@dimen/_6pxh}"
             android:layout_width="match_parent"
             android:layout_height="607dp"
-            android:layout_marginStart="@dimen/_2pxh"
+            android:paddingTop="@dimen/_10sp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="@dimen/_2pxv"
-            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginEnd="10dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2" />

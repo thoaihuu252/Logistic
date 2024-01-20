@@ -28,7 +28,7 @@
         android:fontFamily="@font/bangers"
         android:text="SBE Logistic"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

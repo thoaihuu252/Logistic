@@ -7,9 +7,9 @@
     <ImageView
         android:id="@+id/imageBanner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/khohang"/>
+        android:src="@drawable/top_bgprofile"/>
 
     <ScrollView
         android:layout_width="match_parent"
