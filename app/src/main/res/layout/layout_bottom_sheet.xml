@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sp"
         android:scaleType="centerCrop"
-        android:src="@drawable/dayroi"/>
+        android:src="@drawable/top_bgprofile"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -28,13 +28,13 @@
         android:id="@+id/textTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tổng tiền: 123456"
+        android:text="Tổng tiền: 3000000"
         android:padding="8dp"/>
     <TextView
         android:id="@+id/textKhach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="tên :An - SDt 033736582"
+        android:text="Tên :An - SDT: 033736582"
         android:padding="8dp"/>
     <TextView
         android:layout_width="match_parent"

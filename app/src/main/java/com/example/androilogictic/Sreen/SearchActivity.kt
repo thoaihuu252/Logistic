@@ -39,12 +39,11 @@ class SearchActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ArrayList<Order?>?>?, response: Response<ArrayList<Order?>?>?) {
                 if (response?.isSuccessful == true) {
                     val orders = response.body()
-
                     if (orders != null) {
                         searchList?.addAll(orders)
                     }
                 } else {
-                    Toast.makeText(applicationContext, "Có lỗi khi lấy dữ liệu từ API", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Khong tim thay", Toast.LENGTH_SHORT).show()
                 }
             }
 
