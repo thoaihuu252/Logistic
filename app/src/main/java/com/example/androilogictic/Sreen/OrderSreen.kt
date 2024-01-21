@@ -3,6 +3,7 @@ package com.example.androilogictic.Sreen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,6 +51,10 @@ class OrderSreen : AppCompatActivity() {
 
                 else -> false
             }
+        }
+        val search : ImageButton = findViewById(R.id.btnSearch)
+        search.setOnClickListener{
+            navigateToScreen(SearchActivity::class.java)
         }
         getMyDataOrder()
     }
