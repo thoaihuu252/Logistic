@@ -1,5 +1,6 @@
 package com.example.androilogictic.Sreen
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,7 @@ import retrofit2.Response
 class LoginSreen : AppCompatActivity() {
     private val userArrayList: ArrayList<User> = ArrayList()
 
+    private var data : String =""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_sreen)
@@ -27,6 +29,7 @@ class LoginSreen : AppCompatActivity() {
         val pass = findViewById<TextInputEditText>(R.id.passwordLogin)
         val register = findViewById<Button>(R.id.registerButton)
         val login = findViewById<Button>(R.id.Login)
+
         //APi
         getMyData()
 
@@ -39,18 +42,17 @@ class LoginSreen : AppCompatActivity() {
 
         login.setOnClickListener {
             val intent = Intent (this, MainSreen::class.java)
-            for (u in userArrayList) {
-                val uName =u.name
-                val uPass = u.password
-                if (username.text.toString().equals(uName)
-                    && pass.text.toString().equals(uPass)
-                ) {
-                    startActivity(intent)
-                    break
-                } else {
-                    showLoginFailedDialog()
-                }
+            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            var check = checkLogin(username.text.toString(),pass.text.toString())
+            if (check){
+                editor.putString("USER_ID", data)
+                editor.apply()
+                startActivity(intent)
+            }else{
+                showLoginFailedDialog()
             }
+
         }
     }
     // funtion getAPi bằng retrofit
@@ -88,6 +90,20 @@ class LoginSreen : AppCompatActivity() {
             .create()
 
         alertDialog.show()
+    }
+    fun checkLogin(user:String, pass:String): Boolean {
+        var result = false
+        for (u in userArrayList) {
+            val uName =u.name
+            val uPass = u.password
+            if (user.equals(uName)
+                && pass.equals(uPass)
+            ) {
+                data = u.id
+                result =  true
+            }
+        }
+        return result
     }
 
 }

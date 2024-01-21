@@ -1,5 +1,6 @@
 package com.example.androilogictic.Sreen
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,8 +10,10 @@ import java.util.Calendar
 import java.util.Locale
 import android.widget.TextView
 import android.widget.Toast
+import com.example.androilogictic.Api.ApiProject
 import com.example.androilogictic.Api.ApiWeather
 import com.example.androilogictic.Model.Product
+import com.example.androilogictic.Model.User
 import com.example.androilogictic.Model.WeatherResponse
 import com.example.androilogictic.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,9 +22,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainSreen : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val userArrayList: ArrayList<User> = ArrayList()
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_sreen)
+
+
 
         fun navigateToScreen(destinationClass: Class<*>) {
             val intent = Intent(this, destinationClass)
@@ -56,8 +62,13 @@ class MainSreen : AppCompatActivity() {
                 else -> false
             }
         }
+        getMyData()
         val linearCard : LinearLayout = findViewById(R.id.linearCard)
         linearCard.setOnClickListener{navigateToScreen(OrderSreen::class.java)}
+
+
+
+
 
     //API weather
         val apiKey = "9c45e36329e9482e9c5104828240901"
@@ -107,4 +118,41 @@ class MainSreen : AppCompatActivity() {
 
 
     }
+    // funtion getAPi bằng retrofit
+    private fun getMyData(){
+        val retroData = ApiProject.RetrofitClient.apiBuilder.getUsers()
+        retroData.enqueue(object : Callback<ArrayList<User>> {
+            override fun onResponse(call: Call<ArrayList<User>>, response: Response<ArrayList<User>>) {
+                if (response.isSuccessful) {
+                    val users = response.body()
+                    if (users != null) {
+                        userArrayList.addAll(users)
+
+                        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                        val userId = sharedPreferences.getString("USER_ID", null)
+                        val name :TextView =findViewById(R.id.txtJohnSmith)
+                        val txtPrice :TextView =findViewById(R.id.txtPrice)
+                        val txtMoneyOrder :TextView =findViewById(R.id.txtMoneyOrder)
+
+
+                        for (u : User in userArrayList ){
+                            if (u.id.equals(userId)){
+                                name.text = u.name
+                                txtPrice.text = u.total.toString()
+                                txtMoneyOrder.text = u.email
+                            }
+                        }
+                    }
+                } else {
+                    Toast.makeText(applicationContext, "Có lỗi khi lấy dữ liệu từ API", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
+                Toast.makeText(applicationContext, "Đã xảy ra lỗi: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+    }
+
 }

@@ -67,7 +67,7 @@ class OrderSreen : AppCompatActivity() {
                     val orders = response.body()
                     if (orders != null) {
                         for (od : Order in orders) {
-                            if (!od.status.equals("Complete")) {
+                            if (od.status.equals("Wait")) {
                                 orderList.add(od)
                             }
                         }
@@ -93,5 +93,8 @@ class OrderSreen : AppCompatActivity() {
             val bottomSheet = BottomSheet.newInstance(it.productList as ArrayList<Product>,it)
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }
+
+
     }
+
 }

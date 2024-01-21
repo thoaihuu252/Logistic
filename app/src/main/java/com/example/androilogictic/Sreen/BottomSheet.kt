@@ -7,13 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androilogictic.Adapter.RowProductAdapter
+import com.example.androilogictic.Api.ApiProject
 import com.example.androilogictic.Model.Order
 import com.example.androilogictic.Model.Product
 import com.example.androilogictic.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.IOException
 
 open class BottomSheet: BottomSheetDialogFragment() {
     companion object {
@@ -42,12 +49,52 @@ open class BottomSheet: BottomSheetDialogFragment() {
         textID.text = order.id
 
         val btnClose = view.findViewById<Button>(R.id.btnCloseSheet)
+
+        val btnComplete = view.findViewById<Button>(R.id.       btnCompleteSheet)
+
+
         btnClose.setOnClickListener {
             dismiss()
         }
+        btnComplete.setOnClickListener{
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Xác nhận hoàn thành đơn  hàng")
+                .setMessage("Bạn chắc chắn muốn hoàn thành đơn đặt hàng này?")
+                .setPositiveButton("Đồng ý") { dialog, which ->
+                    // Xử lý khi người dùng bấm nút "Đồng ý"
+                    val call = ApiProject.RetrofitClient.apiBuilder.updateOrderStatus(order.id, "Complete")
+                    call.enqueue(object : Callback<Order> {
+                        override fun onResponse(call: Call<Order>, response: Response<Order>) {
+                            if (response.isSuccessful) {
+                                // Xử lý khi request thành công
+                                val updatedOrder = response.body()
+                                // Do something with updatedOrder
+                            } else {
 
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Order>, t: Throwable) {
+
+
+                        }
+                    })
+                    dismiss()
+                }
+                .setNegativeButton("Hủy bỏ") { dialog, which ->
+                    // Xử lý khi người dùng bấm nút "Hủy bỏ"
+                    dialog.dismiss()
+                }
+                .show()
+
+        }
 
     }
+
+
+
+
+
 }
 
 

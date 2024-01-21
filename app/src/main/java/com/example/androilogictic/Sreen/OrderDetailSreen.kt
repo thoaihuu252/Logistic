@@ -21,7 +21,7 @@ class OrderDetailSreen : AppCompatActivity() {
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         if (warehouse != null){
             var txtWarehouse : TextView = findViewById(R.id.textWhDetail)
-            txtWarehouse.text = warehouse.nameWarehouse
+            txtWarehouse.text = warehouse.nameWh
         }
 
         btnBack.setOnClickListener {
