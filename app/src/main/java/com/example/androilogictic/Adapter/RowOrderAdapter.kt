@@ -15,7 +15,7 @@ class RowOrderAdapter(private val newList : ArrayList<Order> ) :  RecyclerView.A
         val nameKhach : TextView = itemView.findViewById(R.id.txtNameOrder)
         val phone : TextView = itemView.findViewById(R.id.txtPhoneNumberOrder)
         val price : TextView = itemView.findViewById(R.id.txtPriceOrder)
-        val area : AppCompatButton = itemView.findViewById(R.id.btnAreaOrder)
+        val area : TextView = itemView.findViewById(R.id.txtarea)
 
     }
 

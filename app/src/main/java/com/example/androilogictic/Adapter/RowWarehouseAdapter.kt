@@ -33,9 +33,9 @@ class RowWarehouseAdapter(private val newList : ArrayList<Warehouse>) : Recycler
 
     override fun onBindViewHolder(holder: WarehouseHolder, position: Int) {
         val currentItem = newList[position]
-        val number = "Số đơn trong kho : " + currentItem.numberOrderWarehouse
-        holder.nameWh.text = currentItem.nameWarehouse
-        holder.areaWh.text = currentItem.areaWarehouse
+        val number = "Số đơn trong kho : " + currentItem.numberOrderWh
+        holder.nameWh.text = currentItem.nameWh
+        holder.areaWh.text = currentItem.areaWh
         holder.orderNumberWh.text = number
         holder.itemView.setOnClickListener{
             onClick?.invoke(currentItem)

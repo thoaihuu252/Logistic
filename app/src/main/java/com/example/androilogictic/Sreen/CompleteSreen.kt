@@ -1,5 +1,6 @@
 package com.example.androilogictic.Sreen
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,12 +22,13 @@ import retrofit2.Response
 class CompleteSreen : AppCompatActivity() {
     private lateinit var newRecyclerView: RecyclerView
     private   var completeList: ArrayList<Order>  = ArrayList()
+    val SEARCH_REQUEST_CODE = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_complete_sreen)
         val btnSearch: ImageView = findViewById(R.id.btnSearch)
 
-        btnSearch.setOnClickListener { navigateToScreen(SearchSreen::class.java) }
+        btnSearch.setOnClickListener { navigateToScreen(SearchActivity::class.java) }
 
         val bottomNavView: BottomNavigationView = findViewById(R.id.bottomNavView)
         bottomNavView.setSelectedItemId(R.id.menu_complete);
@@ -102,7 +104,19 @@ class CompleteSreen : AppCompatActivity() {
             val bottomSheet = BottomSheet.newInstance(it.productList as ArrayList<Product>,it)
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }
+
     }
+    // Trong CompleteSreen hoặc Activity chính
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SEARCH_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val searchResult = data?.getSerializableExtra("searchResult") as? ArrayList<Order>
+            searchResult?.let {
+                setAdapter(it)
+            }
+        }
+    }
+
 
 
 }

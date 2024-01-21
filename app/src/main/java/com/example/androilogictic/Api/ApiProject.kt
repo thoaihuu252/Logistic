@@ -2,19 +2,35 @@ package com.example.androilogictic.Api
 
 import com.example.androilogictic.Model.Order
 import com.example.androilogictic.Model.User
+import com.example.androilogictic.Model.Warehouse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.PUT
+import retrofit2.http.Path
+import retrofit2.http.Query
+
 
 interface ApiProject {
 
     //APi :http://localhost:8080/
-    @GET("api/users")
+    @GET("user")
     fun getUsers(): Call<ArrayList<User>>
 
-    @GET("api/orders")
+    @GET("orders")
     fun getOrder(): Call<ArrayList<Order>>
+    @GET("api/warehouses")
+    fun getWarehouse(): Call<ArrayList<Warehouse>>
+
+    @GET("/api/orders/searchByName")
+    fun searchOrdersByName(@Query("name") name: String?): Call<ArrayList<Order?>?>?
+
+    @PUT("/update-status-order/{id}")
+    fun updateOrderStatus(
+        @Path("id") id: String,
+        @Query("newStatus") newStatus: String
+    ): Call<Order>
 
 
     object RetrofitClient {

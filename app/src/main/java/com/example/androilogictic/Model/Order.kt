@@ -10,5 +10,6 @@ data class Order(
     @SerializedName("areaOrder") val areaOrder: String,
     @SerializedName("status") val status: String,
     @SerializedName("ship") val ship: Int,
-    @SerializedName("productList") val productList: List<Product>
+    @SerializedName("products") val productList: List<Product>,
+    @SerializedName("user") val user: User
 )

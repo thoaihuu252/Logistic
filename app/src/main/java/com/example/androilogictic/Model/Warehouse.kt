@@ -2,27 +2,31 @@ package com.example.androilogictic.Model
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 
 data class Warehouse(
-    var id : String,
-    var nameWarehouse: String,
-    var areaWarehouse: String,
-    var numberOrderWarehouse: Int
-
-):Parcelable {
+    @SerializedName("id") val  id  :String,
+    @SerializedName("nameWh") val  nameWh : String, //Warehouse - wh
+    @SerializedName("areaWh") val  areaWh:String,
+    @SerializedName("numberOrderWh") val numberOrderWh: Int,
+    @SerializedName("productList") val productList : ArrayList<Order>
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
-        parcel.readInt()
-    ) {
-    }
+        parcel.readInt(),
+        ArrayList<Order>().apply {
+            parcel.readArrayList( Order::class.java.classLoader) as ArrayList<Order>
+        }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
-        parcel.writeString(nameWarehouse)
-        parcel.writeString(areaWarehouse)
-        parcel.writeInt(numberOrderWarehouse)
+        parcel.writeString(nameWh)
+        parcel.writeString(areaWh)
+        parcel.writeInt(numberOrderWh)
+        parcel.writeList(productList)
     }
 
     override fun describeContents(): Int {
@@ -39,3 +43,4 @@ data class Warehouse(
         }
     }
 }
+

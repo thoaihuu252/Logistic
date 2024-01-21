@@ -36,7 +36,7 @@ class RowCompleteOrderAdapter(private val newList : ArrayList<Order> ) :
         val nameKhach : TextView = itemView.findViewById(R.id.txtNameComplete)
         val phone : TextView = itemView.findViewById(R.id.txtPhoneNumberComplete)
         val price : TextView = itemView.findViewById(R.id.txtPriceComplete)
-        val area : AppCompatButton = itemView.findViewById(R.id.btnArea)
+        val area : TextView = itemView.findViewById(R.id.txtarea)
 
     }
 

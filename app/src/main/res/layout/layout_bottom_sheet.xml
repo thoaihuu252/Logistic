@@ -50,11 +50,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <Button
         android:id="@+id/btnCloseSheet"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/custom_button"
         android:layout_height="wrap_content"
-        android:text="Close" />
+        android:text="Tắt" />
+    <Button
+        android:id="@+id/btnCompleteSheet"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:background="@drawable/custom_button"
+        android:layout_height="wrap_content"
+        android:text="Hoàn thành" />
+</LinearLayout>
+
 
 </LinearLayout>
