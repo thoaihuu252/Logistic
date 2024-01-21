@@ -364,7 +364,7 @@
                     android:ellipsize="end"
                     android:textSize="12sp"
                     android:singleLine="true"
-                    android:text="0 đơn" />
+                    android:text="" />
             </LinearLayout>
 
 

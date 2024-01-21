@@ -100,7 +100,7 @@
                     android:paddingRight="10dp"
                     android:singleLine="true"
                     android:background="@drawable/custom_button"
-                    android:text="Xếp theo giá"
+                    android:text="Kho hàng TP HCM"
                     android:textAllCaps="false" />
             </LinearLayout>
         </HorizontalScrollView>

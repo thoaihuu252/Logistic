@@ -102,7 +102,7 @@
                 android:layout_weight="0.02"
                 android:background="@color/bluegray_100" />
             <LinearLayout
-
+                android:id="@+id/btnchangpass"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20pxh"
@@ -116,7 +116,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:src="@drawable/baseline_password_24" />
 
                 <TextView
@@ -211,7 +210,7 @@
                     android:ellipsize="end"
                     android:gravity="center"
                     android:singleLine="true"
-                    android:text="Lịch sử giao dịch"
+                    android:text="Cài đặt"
                     android:textSize="12sp" />
             </LinearLayout>
 

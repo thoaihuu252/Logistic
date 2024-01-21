@@ -46,7 +46,8 @@ class ProfileSreen : AppCompatActivity() {
                 else -> false
             }
         }
-
+        val chengepass : LinearLayout = findViewById(R.id.btnchangpass)
+        chengepass.setOnClickListener{ navigateToScreen(ChangePassSreen::class.java) }
         logout.setOnClickListener { navigateToScreen(LoginSreen::class.java) }
 
     }

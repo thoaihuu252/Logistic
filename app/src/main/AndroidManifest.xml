@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AndroiLogictic"
         tools:targetApi="31">
         <activity
+            android:name=".Sreen.ChangePassSreen"
+            android:exported="false" />
+        <activity
             android:name=".Sreen.SearchActivity"
             android:exported="false" />
         <activity
