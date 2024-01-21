@@ -88,7 +88,7 @@
                     android:paddingRight="10dp"
                     android:singleLine="true"
                     android:background="@drawable/custom_button"
-                    android:text="@string/lbl_all"
+                    android:text="All"
                     android:textAllCaps="false" />
                 <androidx.appcompat.widget.AppCompatButton
                     android:ellipsize="end"
@@ -104,7 +104,7 @@
                     android:paddingRight="10dp"
                     android:singleLine="true"
                     android:background="@drawable/custom_button"
-                    android:text="Xếp theo giá"
+                    android:text="Đơn hàng hoàn thành"
                     android:textAllCaps="false" />
             </LinearLayout>
         </HorizontalScrollView>
